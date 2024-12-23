@@ -1,0 +1,17 @@
+lzc-sdk-version: 0.1
+name: logseq
+package: iamxiaoe.lzcapp.logseq
+version: 0.0.1
+description: 
+license: https://choosealicense.com/licenses/mit/
+homepage: 
+author: 
+application:
+  subdomain: logseq
+  routes:
+    - /=http://logseq.iamxiaoe.lzcapp.logseq.lzcapp:80
+  depends_on:
+    - logseq
+services:
+  logseq:
+    image: registry.lazycat.cloud/logseq/logseq-webapp:0.0.1
