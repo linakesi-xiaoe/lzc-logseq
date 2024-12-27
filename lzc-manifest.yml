@@ -1,34 +1,17 @@
 lzc-sdk-version: 0.1
-name: WikiJs
-package: iamxiaoe.lzcapp.wikijs
+name: logseq
+package: iamxiaoe.lzcapp.logseq
 version: 0.0.1
 description: 
 license: https://choosealicense.com/licenses/mit/
 homepage: 
 author: 
 application:
-  subdomain: wikijs
+  subdomain: logseq
   routes:
-    - /=http://wikijs.iamxiaoe.lzcapp.wikijs.lzcapp:3000
+    - /=http://logseq.iamxiaoe.lzcapp.logseq.lzcapp:80
   depends_on:
-    - wikijs
+    - logseq
 services:
-  wikijs:
-    image: registry.lazycat.cloud/iamxiaoe/requarks/wiki:23a320cc621a0b72
-    environment:
-      - DB_TYPE=postgres
-      - DB_HOST=db.iamxiaoe.lzcapp.wikijs.lzcapp
-      - DB_PORT=5432
-      - DB_USER=admin
-      - DB_PASS=admin
-      - DB_NAME=wiki
-    depends_on:
-      - db
-  db:
-    image: registry.lazycat.cloud/iamxiaoe/library/postgres:39b4614da0ea1866
-    environment:
-      - POSTGRES_DB=wiki
-      - POSTGRES_PASSWORD=admin
-      - POSTGRES_USER=admin
-    binds:
-      - /lzcapp/var/db:/var/lib/postgresql/data
+  logseq:
+    image: registry.lazycat.cloud/logseq/logseq-webapp:0.0.1
